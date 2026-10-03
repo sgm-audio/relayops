@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RelayOps client acquisition and delivery operations system" />
+  <title>RelayOps — Client operations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div><strong>Relay</strong><small>OPERATIONS</small></div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span><span>Overview</span></button>
+        <button class="nav-item" data-view="pipeline"><span class="nav-icon">◇</span><span>Pipeline</span><span class="nav-count" id="navLeadCount">0</span></button>
+        <button class="nav-item" data-view="outreach"><span class="nav-icon">↗</span><span>Outreach</span></button>
+        <button class="nav-item" data-view="clients"><span class="nav-icon">◎</span><span>Clients</span></button>
+        <p class="nav-label">Operations</p>
+        <button class="nav-item" data-view="automations"><span class="nav-icon">⌁</span><span>Automations</span></button>
+        <button class="nav-item" data-view="documents"><span class="nav-icon">▤</span><span>Documents</span></button>
+        <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌖</span><span>Roadmap</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="portal-link" id="portalPreviewBtn">
+          <span class="portal-pulse"></span>
+          <span><strong>Client portal</strong><small>Preview experience</small></span>
+          <b>↗</b>
+        </button>
+        <div class="sidebar-profile">
+          <div class="avatar">YO</div>
+          <div><strong>Your Name</strong><small>[Agency Legal Name]</small></div>
+          <button aria-label="Settings">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="page-heading">
+          <p id="pageEyebrow">Wednesday, July 29</p>
+          <h1 id="pageTitle">Good morning, Your Name</h1>
+        </div>
+        <div class="top-actions">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="globalSearch" type="search" placeholder="Search anything…" aria-label="Search" />
+            <kbd>⌘K</kbd>
+          </label>
+          <button class="icon-btn" id="notificationBtn" aria-label="Notifications"><span>♢</span><i></i></button>
+          <button class="primary-btn" id="addLeadBtn"><span>＋</span> New lead</button>
+        </div>
+      </header>
+
+      <section class="content" id="appContent" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop" role="presentation">
+    <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
