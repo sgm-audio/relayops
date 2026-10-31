@@ -1,8 +1,10 @@
 # RelayOps
 
-A custom, browser-based MVP for automating outreach and client interaction across **Web Development, Shopify, and Amazon services**, with **Audio Software intentionally gated behind initial validation**.
+A front-end mock-up of the ops tool I want for outreach and client work (web dev, Shopify and Amazon services), plus the SOPs and contract templates behind it. Audio software work is held back until the services side is validated.
 
-RelayOps is built around one non-negotiable operating rule:
+What's in the repo right now: a static page (`index.html`, `app.js`, `styles.css`) and the docs in `docs/`. The pnpm/Turborepo files are scaffolding for a later Next.js move. `apps/` and `packages/` don't exist yet, so `pnpm build` has nothing to build. See `TODOS.md`.
+
+The rule it's built around:
 
 > **No production work begins until paid discovery is complete, scope is approved, terms are signed, and the implementation deposit has cleared.**
 
@@ -30,7 +32,7 @@ The app stores demo changes in the browser's `localStorage`. Use **Pipeline → 
 
 ## Important MVP boundary
 
-This is a **high-fidelity functional front-end MVP**, not a production system. Actions such as sending email, collecting payment, scheduling meetings, electronic signing, and uploading files are simulated until production credentials and server-side services are connected.
+It's a front-end mock-up only. There's no server. Actions such as sending email, collecting payment, scheduling meetings, electronic signing, and uploading files are simulated until production credentials and server-side services are connected.
 
 Do **not** treat a button state or browser-local flag as proof of payment in production. The production gate must rely on signed payment-provider webhook events and an append-only audit record.
 
@@ -61,12 +63,12 @@ Have Canadian counsel and an accountant validate deposits, cancellations, taxes,
 - [`docs/04_DELIVERY_SOP.md`](docs/04_DELIVERY_SOP.md)
 - [`docs/05_CLIENT_HANDOFF_REQUIREMENTS.md`](docs/05_CLIENT_HANDOFF_REQUIREMENTS.md)
 - [`docs/06_PRIVACY_AND_SECURITY_SOP.md`](docs/06_PRIVACY_AND_SECURITY_SOP.md)
-- [`docs/07_PRODUCTION_ARCHITECTURE.md`](docs/07_PRODUCTION_ARCHITECTURE.md)
+- [`docs/07_PRODUCTION_ARCHITECTURE.md`](docs/07_PRODUCTION_ARCHITECTURE.md) (planned, not built)
 - [`docs/08_TEST_PLAN_AND_AUDIO_ROADMAP.md`](docs/08_TEST_PLAN_AND_AUDIO_ROADMAP.md)
 
-## Production integration plan
+## Planned backend
 
-Recommended production baseline:
+Not built. This is what I'm planning to use:
 
 - **Application:** Next.js/TypeScript or equivalent server-rendered framework
 - **Database:** PostgreSQL with row-level tenancy and audit tables
@@ -104,3 +106,7 @@ The app is designed to support compliance; it does not itself make outreach lawf
 - Office of the Privacy Commissioner of Canada, **For businesses**: https://www.priv.gc.ca/en/for-businesses/
 
 Obtain legal advice before live use, particularly for implied consent, referrals, conspicuous publication, B2B exceptions, retention, provincial privacy law, and consumer contracts.
+
+## License
+
+MIT. See [LICENSE](LICENSE). The ToS and SOW templates in `docs/` aren't legal advice. Get them reviewed before you use them.
